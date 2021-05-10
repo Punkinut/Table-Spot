@@ -7,3 +7,10 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public/home.html')));
+
+app.get('/reserve', (req, res) => res.sendFile(path.join(__dirname, 'public/make.html')));
+
+app.get('/list', (req, res) => res.sendFile(path.join(__dirname, 'public/view.html')));
+
+app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
