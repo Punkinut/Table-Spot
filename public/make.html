@@ -4,12 +4,190 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hot Stop | Make A Reservation</title>
+    <title>Hot Stop | View Tables</title>
+    <style type="text/CSS">
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      min-height: 100%;
+      line-height: 1;
+      font-family: sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 100%;
+    }
+
+    input, select, option, optgroup, textarea, button,
+    pre, code {
+      font-size: 100%;
+      font-family: inherit;
+    }
+
+    ol, ul {
+      list-style: none;
+    }
+    </style>
+    <style type="text/CSS">
+    :root {
+    --purple: #4F549A;
+    --dpurple: #2D3156;
+    }
+    .border {
+        border: 1px solid black;
+    }
+    
+    body {
+        background-color: var(--purple);
+    }
+    
+    .main-interface {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 800px;
+        position: relative;
+        z-index: 2;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    
+    .sub {
+        opacity: 80%;
+        padding-bottom: 40px;
+        line-height: 1.7rem;
+    }
+    
+    .emoji {
+        font-size: 70px;
+        padding-bottom: 40px;
+    }
+    
+    .home {
+        border: none !important;
+        display: block;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .arrow {
+        font-size: 50px;
+        position: absolute;
+        bottom: 130px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%)
+    }
+    
+    .wave {
+        position: absolute;
+        bottom: -1500px;
+        font-size: 2000px;
+        z-index: 1;
+        color: var(--dpurple);
+        animation: move 25s ease infinite;
+    }
+    
+    @keyframes move {
+    	0% {
+    		left: -500px;
+    	}
+    	50% {
+    		left: -200px;
+    	}
+    	100% {
+    		left: -500px;
+    	}
+    }
+    
+    button {
+        border: 1px solid white;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        opacity: 80%;
+        padding: 23px;
+        border-radius: 5px;
+        opacity: 80%;
+        cursor: pointer;
+        margin: 10px;
+        position: relative;
+        z-index: 3;
+        transition: all 150ms ease-in-out;
+    }
+    
+    button:hover {
+        opacity: 50%;
+    }
+    
+    .form-container {
+        width: 80%;
+        margin: auto;
+    }
+    .font {
+        font-family: poppins, sans-serif;
+        font-style: normal;
+        color: white;
+    }
+    
+    .text-t {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+    }
+    
+    .title {
+        font-size: 70px;
+        padding-bottom: 40px;
+    }
+    
+    .f200 {
+        font-weight: 200;
+    }
+    
+    .f400 {
+        font-weight: 400;
+    }
+    
+    .f600 {
+        font-weight: 600;
+    }
+    
+    .f700 {
+        font-weight: 700;
+    }
+    
+    .f800 {
+        font-weight: 800;
+    }
+    
+    .f900 {
+        font-weight: 900;
+    }
+    
+    @media screen and (max-width: 600px) {
+        .title {
+            font-size: 60px;
+        }
+    }
+    
+    @media screen and (max-width: 530px) {
+        .title {
+            font-size: 10vw;
+        }
+    }
+    </style>
     <link rel="shortcut icon" type="img/svg" href="../assets/images/dish.svg">
     <script src="https://kit.fontawesome.com/3759b7111c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/reset.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
     <link rel="stylesheet" href="https://use.typekit.net/nwd3ukw.css">
 </head>
 <body>
