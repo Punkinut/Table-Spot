@@ -198,12 +198,17 @@
             <p class="f800 title">Hot Stop</p>
             <p class="f200 sub">The worlds smallest restaurant! Book your seat before they are all gone.</p>
             <p class="emoji">✌🏻</p>
-            <button class="f200">View Tables</button>
-            <button class="f200">Make Reservation</button>
+            <a href="/list"><button id="view" class="f200">View Tables</button></a>
+            <a href="/reserve"><button id="make" class="f200">Make Reservation</button></a>
         </section>
         <i class="fas fa-money-bill-wave-alt wave"></i>
     </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+<script>
+    $('#view').on('click', e => {
+        console.log('Hello')
+    })
+</script>
 </body>
 </html>
