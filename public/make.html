@@ -262,14 +262,42 @@
     </section>
     <section class="form-container font">
         <form class="form">
-            <input type="text" placeholder="Name">
-            <input type="number" placeholder="Number">
-            <input type="email" placeholder="Email">
-            <input type="number" placeholder="Unique ID">
+            <input type="text" placeholder="Name" id="name">
+            <input type="number" placeholder="Number" id="phone">
+            <input type="email" placeholder="Email" id="email">
+            <input type="number" placeholder="Unique ID" id="uid">
             <button type="submit" class="submit">Submit</button>
         </form>
     </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+<script>
+
+let newReservation = {
+      customerName: document.getElementById('name').value.trim(),
+      phoneNumber: document.getElementById('phone').value.trim(),
+      customerEmail: document.getElementById('email').value.trim(),
+      customerID: document.getElementById('uid').value.trim(),
+    };
+
+    
+    $('.submit').on('click', e => {
+        e.preventDefault();
+        fetch('/reserve', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newReservation),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data)
+            })
+            .catch((err) => {
+                console.error(err)
+            })
+    })
+</script>
 </body>
 </html>
