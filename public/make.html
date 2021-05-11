@@ -272,15 +272,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
 <script>
+    const newUser = {
+        name: $('#name').val().trim(' '),
+        number: $('#phone').val().trim(' '),
+        email: $('#email').val().trim(' '),
+        id: $('#uid').val().trim(' ')
+    }
+
     $('.submit').on('click', e => {
         e.preventDefault();
         fetch('/reserve', {
-            method: 'GET',
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
+            body: JSON.stringify(newUser)
         })
-            .then((res) => res.json())
+            .then((res) => {
+                return res.json()
+            })
             .then((data) => {
                 console.log(data)
             })
