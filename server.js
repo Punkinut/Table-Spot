@@ -13,4 +13,9 @@ app.get('/reserve', (req, res) => res.sendFile(path.join(__dirname, 'public/make
 
 app.get('/list', (req, res) => res.sendFile(path.join(__dirname, 'public/view.html')));
 
+app.post('/reserve', (req, res) => {
+    const newReservation = req.body;
+    res.json(newReservation);
+})
+
 app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
